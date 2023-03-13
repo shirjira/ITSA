@@ -3,13 +3,21 @@
 using namespace std;
 int main()
 {
-	double x = 0.0;
-	double result = 0.0;
+	int x, y;
+	while (cin >> x >> y) {
+		int  radius = 10000;
+		double new_redius = (x * x) + (y * y);
+		if(new_redius < radius) {
+			cout << "inside\n";
+		}
+		else
+		{
+			cout << "outside\n" ;
+		}
+		return 0;
 
-	cin >> x;
-	result = x * 1.6;
-	cout << setprecision(1) << fixed << result << endl;
-	return 0;
+	}
+
 
 }
 
