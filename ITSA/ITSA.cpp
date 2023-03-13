@@ -3,25 +3,25 @@ using namespace std;
 
 int main()
 {
-	int starH=0, starM=0,endH=0,endM=0;
-
-	cin >> starH >> starM;
-	cin >> endH >> endM;
-	int time = (endH * 60 + endM) - (starH * 60 + starM);
-	if(time <=120 && time >=0)
+	int n =0 ;
+	int bin[8];
+	cin >> n;
+	if (n < 0)
 	{
-		cout << time/30 * 30 << endl;
+		n += 256;
 	}
-	else if (time > 120 && time <= 240)
+	for (int i = 7; i >= 0; i--)
 	{
-		cout << (time - 120) / 30 * 40 + 120 << endl;
-    }
-	else 
-	{
-		cout << (time - 240) / 30 * 60 + 120+160 << endl;
-	}
-	return 0;
+		bin[i] = n % 2;
+		n /= 2;
 
+	}
+	for (int i = 0; i < 8; i++)
+	{
+		cout << bin[i];
+
+	}
+	cout << "\n";
 }
 
 
