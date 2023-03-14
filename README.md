@@ -1,5 +1,5 @@
 # 題目5. 十進制轉二進制
-# 問題描述：
+### 問題描述：
 ###  撰寫一個程式，使用者輸入一個整數，印出8位元的二進制表示。
 
 # 輸入說明:
@@ -21,9 +21,13 @@
 using namespace std;
 
 int main()
+#include <iostream>
+using namespace std;
+
+int main()
 {
 	int n =0 ;
-	int bin[8];
+	int bit[8];
 	cin >> n;
 	if (n < 0)
 	{
@@ -31,14 +35,13 @@ int main()
 	}
 	for (int i = 7; i >= 0; i--)
 	{
-		bin[i] = n % 2;
+		bit[i] = n % 2;
 		n /= 2;
 
 	}
 	for (int i = 0; i < 8; i++)
 	{
-		cout << bin[i];
-
+		cout  << bit[i];
 	}
 	cout << "\n";
 }
