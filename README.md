@@ -37,9 +37,9 @@ int main()
 	}
 	for (int i = 0; i < 8; i++)
 	{
-		cout  << bit[i];
+		cout  << bit[i] <<endl;
 	}
-	cout << "\n";
+	cout << "\n"<<endl;
 }
 
 
