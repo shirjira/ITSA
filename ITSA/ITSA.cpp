@@ -32,7 +32,4 @@ int main()
 	}
 	cout << season << endl;
 
-
-
-
 }
