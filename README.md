@@ -21,10 +21,6 @@
 using namespace std;
 
 int main()
-#include <iostream>
-using namespace std;
-
-int main()
 {
 	int n =0 ;
 	int bit[8];
