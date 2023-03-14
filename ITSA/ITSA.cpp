@@ -1,27 +1,38 @@
 ﻿#include <iostream>
+
 using namespace std;
 
 int main()
 {
-	int n =0 ;
-	int bin[8];
-	cin >> n;
-	if (n < 0)
+	int mooth;
+	string season;
+	cin >> mooth;
+	switch (mooth)
 	{
-		n += 256;
+	case 3:
+	case 4:
+	case 5:
+		season = "Spring";
+		break;
+	case 6:
+	case 7:
+	case 8:
+		season = "Summer";
+		break;
+	case 9:
+	case 10:
+	case 11:
+		season = "Autumn";
+		break;
+	case 12:
+	case 1:
+	case 2:
+		season = "Winter";
+		break;
 	}
-	for (int i = 7; i >= 0; i--)
-	{
-		bin[i] = n % 2;
-		n /= 2;
+	cout << season << endl;
 
-	}
-	for (int i = 0; i < 8; i++)
-	{
-		cout << bin[i];
 
-	}
-	cout << "\n";
+
+
 }
-
-
