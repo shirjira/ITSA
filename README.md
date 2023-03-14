@@ -22,7 +22,7 @@ using namespace std;
 
 int main()
 {
-	int n =0 ;
+	int n = 0;
 	int bit[8];
 	cin >> n;
 	if (n < 0)
@@ -37,10 +37,11 @@ int main()
 	}
 	for (int i = 0; i < 8; i++)
 	{
-		cout  << bit[i] <<endl;
+		cout << bit[i] ;
 	}
-	cout << "\n"<<endl;
+	cout << "\n";
 }
+
 
 
 ``` 
