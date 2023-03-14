@@ -5,14 +5,14 @@ int main()
 {
 	int x, y;
 	while (cin >> x >> y) {
-		int  radius = 10000;
+		double  radius = 10000;
 		double new_redius = (x * x) + (y * y);
-		if(new_redius < radius) {
-			cout << "inside\n";
+		if (new_redius < radius) {
+			cout << "inside" << endl;
 		}
 		else
 		{
-			cout << "outside\n" ;
+			cout << "outside" << endl;
 		}
 		return 0;
 
@@ -20,4 +20,3 @@ int main()
 
 
 }
-
