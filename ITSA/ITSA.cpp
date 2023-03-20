@@ -1,31 +1,26 @@
 ﻿#include <iostream>
+#include <math.h>
 using namespace std;
 
 int main()
 {
-	int n;
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		char oper;
-		int a, b, c, d;
-		cin >> oper >> a >> b >> c >> d;
-
-		switch (oper) {
-		case '+':
-			cout << a + c << " " << b + d << endl;
+	int a;
+	int b;
+	
+	cin >> a;
+	for (b = 2; b < a; b++) {
+		if (a % b == 0) {
 			break;
-		case '-':
-			cout << a - c << " " << b - d << endl;
-			break;
-		case '*':
-			cout << a * c - b * d << " " << b * c + a * d << endl;
-			break;
-		case '/':
-			cout << (a * c + b * d) / (c * c + d * d) << " " << (b * c - a * d) / (c * c + d * d) << endl;
 		}
 	}
-	return 0;
-
-	
+	//是質數輸出"YES"
+	if (b == a) {
+		cout << "YES" << endl;
+	}
+	//不是質數輸出"NO"
+	else
+	{
+		cout << "NO" << endl;
+	}
 }
 
