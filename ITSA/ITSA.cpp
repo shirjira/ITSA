@@ -1,20 +1,31 @@
 ﻿#include <iostream>
-#include <math.h>
 using namespace std;
 
 int main()
 {
-	int n, i;
+	int a, b, count;
+	int* num;
+	count = 0;
+	cin >> a >> b;
+	//陣列
+	num = new int[a * b];
 
-	while (cin >> n >> i)
+	for (int i = 0; i < (a * b); i++)
 	{
-		while (i != 0)
-		{
-			int temp = i;
-			i = n % i;
-			n = temp;
-		}
-		cout << n << endl;
+		cin >> num[i];  //數值存入陣列
 	}
+	for (int i = 0; i < b; i++)//反轉後陣列的行數
+	{
+		for (int j = 0; j < a; j++)//反轉後陣列的列數
+		{
+			//陣列反轉輸出
+			count++;
+			cout << num[j * b + i];
+			if (count % a != 0)
+				cout << " ";
+		}
+		cout << endl;
+	}
+	delete[]num;
 	return 0;
 }
