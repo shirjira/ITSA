@@ -4,14 +4,17 @@ using namespace std;
 
 int main()
 {
-	int n;
-	int sum = 0;
+	int n, i;
 
-	cin >> n;
-	for (int i = 1; i <= n; i++) { //1到N之間的數
-		if (i % 3 == 0) { //被3整除的數字總和
-			sum += i;
+	while (cin >> n >> i)
+	{
+		while (i != 0)
+		{
+			int temp = i;
+			i = n % i;
+			n = temp;
 		}
+		cout << n << endl;
 	}
-	cout << sum << endl;
+	return 0;
 }
