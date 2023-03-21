@@ -1,27 +1,28 @@
 ﻿#include <iostream>
 using namespace std;
 
-int main()
+//f(n)定義
+int f(int n)
 {
-	int starH=0, starM=0,endH=0,endM=0;
-
-	cin >> starH >> starM;
-	cin >> endH >> endM;
-	int time = (endH * 60 + endM) - (starH * 60 + starM);
-	if(time <=120 && time >=0)
+	//n=0 or n=1 輸出n+1
+	if (n == 0 || n == 1)
 	{
-		cout << time/30 * 30 << endl;
+		return n + 1;
 	}
-	else if (time > 120 && time <= 240)
+	// n>1 輸出f(n-1)+f(n/2)
+	else if (n > 1)
 	{
-		cout << (time - 120) / 30 * 40 + 120 << endl;
-    }
-	else 
-	{
-		cout << (time - 240) / 30 * 60 + 120+160 << endl;
+		return f(n - 1) + f(n / 2);
 	}
-	return 0;
-
 }
 
+
+int main()
+{
+	int n;
+	cin >> n;
+	cout << f(n) << endl;
+
+	return 0;
+}
 
