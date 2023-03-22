@@ -19,4 +19,5 @@ int main()
 	}
 	a ? cout << "YES" << endl : cout << "NO" << endl;//輸出結果 
 	return 0;
+
 }
