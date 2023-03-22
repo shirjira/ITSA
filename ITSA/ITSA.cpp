@@ -22,7 +22,6 @@ int main()
 			pokeS.push_back(s);
 		}
 		sortPoke(pokeS, pokeS.size());//排序
-	}
 		for (int j = 0; j < pokeS.size(); j++)//輸出排序結果
 		{
 			if (j == pokeS.size() - 1)
@@ -31,7 +30,9 @@ int main()
 				cout << pokeS[j] << " ";
 		}
 		pokeS.clear();//清空向量給下一筆測資
-	
+
+	}
+		
 	
 	return 0;
 }
