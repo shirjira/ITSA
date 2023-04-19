@@ -1,42 +1,29 @@
 ﻿#include<iostream>
 #include<string>
-#include<sstream>
-#include<map>
-#include<algorithm>
+
 using namespace std;
 
+int appearNum(string& s, int p, string& l);
 
 int main()
 {
-	string input, sort;
-	int count = 0;
-	map<char, int>F;
+    string inputS, inputL, save;
 
-	string Englishword = "abcdefghijklmnopqrstuvwxyz";
-
-	getline(cin, input);
-	transform(input.begin(), input.end(), input.begin(), ::tolower);//大小寫轉換
-	istringstream split(input);
-
-	while (getline(split, sort, ' ')) //分割字串
-	{
-		count++;
-		for (int i = 0; i < sort.length(); i++)
-		{
-			F[sort[i]] += 1;
-		};
-	};
-	cout << count << endl;
-	for (int j = 0; j < 26; j++)
-	{
-		for (map<char, int>::iterator p = F.begin(); p != F.end(); p++)
-		{
-			if (Englishword[j] == (*p).first && (*p).second != 0)
-			{
-				cout << (*p).first << " : " << (*p).second << endl;
-			};
-		};
-	};
+    cin >> inputS >> inputL;
+    cout << appearNum(inputS, 0, inputL) << endl;
+    return 0;
+}
+int appearNum(string& s, int p, string& l)
+{
+    int a = 0;
+    if (p > l.length())return a = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (l[i + p] == s[i])continue;
+        else return a += appearNum(s, p + 1, l);
+    }
+    a++; 
+    return a += appearNum(s, p + 1, l);
 }
 
 	
