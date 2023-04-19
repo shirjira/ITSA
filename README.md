@@ -13,15 +13,15 @@
 ### aa
 ### aaa123bbab
 
-###baba
-###12b3bbababa12
+### baba
+### 12b3bbababa12
 
-###baa
-###ababaabbbb
+### baa
+### ababaabbbb
 ## 輸出範例:
-###2
-###2
-###2
+### 2
+### 2
+### 2
 
 
 ## 解答
