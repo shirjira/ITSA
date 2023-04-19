@@ -20,6 +20,7 @@ int main()
         };
 
     }
+
     cout << cars << endl;
     return 0;
 }
