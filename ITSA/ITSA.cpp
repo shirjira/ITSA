@@ -1,48 +1,36 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
-#include <vector>
-#include <cstring>
-#include <cstdlib>
 
 using namespace std;
 
-int main()
-{
-    string strN;
-    getline(cin, strN);
-    int N = atoi(strN.c_str());
+int main() {
+    string input;
+    getline(cin, input); 
 
-    for (int g = 0; g < N; g++)
+    string keyboard = "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./"; 
+
+    for (int i = 0; i < input.length(); i++)
     {
-        string STRinput;
-        getline(cin, STRinput);
-        string other = "!@#$%^&*()_++`1234567890-=={}||qwertyuiop[]\\:""asdfghjkl;''<>??zxcvbnm,.//";
-        int fir = STRinput.size();
-        int sec = other.size();
-
-        for (int i = 0; i < fir; i++)
-        {
-            STRinput[i] = tolower(STRinput[i]);
-        }
-        for (int i = 0; i < fir; i++)
-        {
-            for (int j = 0; j < sec; j++)
-            {
-                if (STRinput[i] == ' ')
-                {
-                    STRinput[i] = ' ';
-                    break;
-                }
-                else if (STRinput[i] == other[j])
-                {
-                    STRinput[i] = other[j + 1];
-                    break;
-                }
+        char a = input[i];
+        int index = keyboard.find(a);
+        if (index != string::npos) 
+        { 
+            char next_a = keyboard[index + 1];
+            if (next_a == '!' || next_a == '@' || next_a == '#' || next_a == '$' || next_a == '^' ||
+                next_a == '*' || next_a == '(' || next_a == ')' || next_a == '_' || next_a == '+' ||
+                next_a == '{' || next_a == '}' || next_a == '|' || next_a == ':' || next_a == '\"' ||
+                next_a == '<' || next_a == '>' || next_a == '?' || next_a == '\n' || next_a == '\r' ||
+                next_a == '\t' || next_a == '\b' || next_a == '\\' || next_a == ']') {
+                next_a = keyboard[index + 2];
             }
-            cout << STRinput[i];
+            cout << next_a;
         }
-        cout << endl;
+        else 
+        {
+            cout << a;
+        }
     }
+    cout << endl;
     return 0;
 }
 
