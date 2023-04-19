@@ -1,35 +1,16 @@
 ﻿#include<iostream>
-#include<sstream>
 using namespace std;
 
 int main()
 {
-    int a[4];
-    int flag = 0;
-    int change = 0;
-    int c1 = 0, c5 = 0, c50 = 0;
-
-    string input, temp;//輸入字串,暫存
-    cin >> input;
-
-    stringstream ss;
-    ss << input;
-    while (getline(ss, temp, ','))//getline(要輸入的資料,輸入的佔存器)
+    long double r, n, p;
+    double sum = 0.0;//本利和
+    cin >> r >> n >> p;
+    r += 1.0;
+    for (int i = 1; i <= n; i++) 
     {
-        if (flag < 4)a[flag] = stoi(temp);//stoi string轉int
-        flag++;
+        sum = (sum + p) * r;//(前面+本次存款)*利率
     }
-    change = a[0] - (a[1] * 15 + a[2] * 20 + a[3] * 30);
-    if (change > 0)//由大算到小
-    {
-        c50 = change / 50;
-        c5 = change % 50 / 5;
-        c1 = change % 50 % 5;
-        cout << c1 << ',' << c5 << ',' << c50 << endl;
-    }
-    else 
-    {
-        change = 0;
-        cout << change << endl;
-    };
+    cout << (long long)sum << endl;//longlong強制轉換增加精度
+    return 0;
 }
