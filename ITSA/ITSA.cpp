@@ -24,6 +24,7 @@ int appearNum(string& s, int p, string& l)
     }
     a++; 
     return a += appearNum(s, p + 1, l);
+
 }
 
 	
