@@ -1,50 +1,35 @@
-﻿#include<iostream> 
+﻿#include<iostream>
+#include<sstream>
 using namespace std;
 
 int main()
 {
-    int board[3][3];
-    int flag;
-    bool compare = false;
-    for (int i = 0; i < 3; i++) 
-    {
-        for (int j = 0; j < 3; j++) 
-        {
-            cin >> board[i][j];
-        }
-    }
+    int a[4];
+    int flag = 0;
+    int change = 0;
+    int c1 = 0, c5 = 0, c50 = 0;
 
-    for (int i = 0; i < 2; i++) {
-        flag = 0;
-        for (int j = 0; j < 2; j++) //行比較 
-        {
-            if (board[i][j] == board[i][j + 1])flag++;
-        }
-        if (flag == 2)compare = true;
-    }
+    string input, temp;//輸入字串,暫存
+    cin >> input;
 
-    for (int i = 0; i < 2; i++) {
-        flag = 0;
-        for (int j = 0; j < 2; j++) //列比較 
-        {
-            if (board[j][i] == board[j + 1][i])flag++;
-        }
-        if (flag == 2)compare = true;
-    }
-    flag = 0;
-    for (int i = 0; i < 2; i++) //左上到右下 
+    stringstream ss;
+    ss << input;
+    while (getline(ss, temp, ','))//getline(要輸入的資料,輸入的佔存器)
     {
-
-        if (board[i][i] == board[i + 1][i + 1])flag++;
-        if (flag == 2)compare = true;
+        if (flag < 4)a[flag] = stoi(temp);//stoi string轉int
+        flag++;
     }
-    flag = 0;
-    for (int i = 0; i < 2; i++) //右下到左上 
+    change = a[0] - (a[1] * 15 + a[2] * 20 + a[3] * 30);
+    if (change > 0)//由大算到小
     {
-        if (board[2 - i][i] == board[1 - i][i + 1])flag++;
-        if (flag == 2)compare = true;
+        c50 = change / 50;
+        c5 = change % 50 / 5;
+        c1 = change % 50 % 5;
+        cout << c1 << ',' << c5 << ',' << c50 << endl;
     }
-    if (compare == true)cout << "True" << endl;
-    else cout << "False" << endl;
-    return 0;
+    else 
+    {
+        change = 0;
+        cout << change << endl;
+    };
 }
