@@ -1,38 +1,48 @@
-﻿#include<iostream>  
-#include<cstring>  
+﻿#include <iostream>
+#include <string>
+#include <vector>
+#include <cstring>
+#include <cstdlib>
 
 using namespace std;
 
-int main() {
-    char enter[10000];
-    fgets(enter, 9999, stdin);
-    int len = strlen(enter);
-    for (int i = 0; i < len; i++) {
-        enter[i] = tolower(enter[i]);
-    }
-    char ans[1000][1000];
-    int nowAns = 0;
-    char* pch = strtok(enter, " \r\n");  
-    while (pch != NULL) {
-        int judge = 1;
-        for (int i = 0; i < nowAns; i++) {
-            if (strcmp(ans[i], pch) == 0) {
-                judge = 0;
-                break;
+int main()
+{
+    string strN;
+    getline(cin, strN);
+    int N = atoi(strN.c_str());
+
+    for (int g = 0; g < N; g++)
+    {
+        string STRinput;
+        getline(cin, STRinput);
+        string other = "!@#$%^&*()_++`1234567890-=={}||qwertyuiop[]\\:""asdfghjkl;''<>??zxcvbnm,.//";
+        int fir = STRinput.size();
+        int sec = other.size();
+
+        for (int i = 0; i < fir; i++)
+        {
+            STRinput[i] = tolower(STRinput[i]);
+        }
+        for (int i = 0; i < fir; i++)
+        {
+            for (int j = 0; j < sec; j++)
+            {
+                if (STRinput[i] == ' ')
+                {
+                    STRinput[i] = ' ';
+                    break;
+                }
+                else if (STRinput[i] == other[j])
+                {
+                    STRinput[i] = other[j + 1];
+                    break;
+                }
             }
+            cout << STRinput[i];
         }
-        if (judge) {
-            strcpy(ans[nowAns], pch);
-            nowAns++;
-        }
-        pch = strtok(NULL, " \r\n");  
+        cout << endl;
     }
-    for (int i = 0; i < nowAns; i++) {
-        if (i)
-            cout<<" ";
-           cout<<ans[i];
-    }
-    cout<<"\n";
     return 0;
 }
-	
+
